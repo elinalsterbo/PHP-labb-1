@@ -18,27 +18,41 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// include 'labb-1-class.php';
-// use Road;
-// use Driver;
+include 'labb-1-class.php';
+use Driver;
 
-// $road = new Road;
-// $driver = new Driver;
+if (isset($_POST['findRoad'])) {
 
+$driver = new Driver("Elin");
+$road = ["left", "left", "left", "left", "right", "right", "right", "right", "straight", "straight", "straight", "straight"];
+$testRoad = $road;
+$correctRoad = 0;
 
-if (isset($_POST['createRoad'])) {
-  // $road = new Road($_POST['newRoad']);
-  // $roads[] = $road;
+$driver->createRoad($testRoad, $correctRoad, $road);
 
-  // Läser in filens innehåll och returnerar det i form av en array.
-  $lines = file('labb-1.csv');
-  shuffle($lines);
-  
-    // Loopar igenom arrayen
-    foreach($lines as $line){
-    echo $line . "</br>";
-    }
 }
+
+// if (isset($_POST['createRoad'])) {
+//   // $road = new Road($_POST['testRoad']);
+//   // $roads[] = $road;
+
+//   // Läser in filens innehåll och returnerar det i form av en array.
+//   $direction = file('labb-1.csv');
+//   // shuffle($direction);
+
+//   shuffle($road);
+  
+//     // Loopar igenom arrayen
+//     // foreach($road as $x){
+//     // echo $x . "</br>";}
+
+//   if($road == $direction) {
+//     echo "Rätt väg!";
+//   }
+//   else {
+//     echo "Fel väg";
+//   }
+// }
 
 ?>
 
@@ -50,7 +64,7 @@ if (isset($_POST['createRoad'])) {
   </head>
   <body>
     <form action="labb-1.php" method="post">
-      <input type="submit" name="createRoad" value="Create road">
+      <input type="submit" name="findRoad" value="Find road">
     </form>  
   </body>
 </html>

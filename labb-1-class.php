@@ -1,32 +1,29 @@
 <?php
 
-class Road {
-
-  public $newRoad;
-  public $safeRoad;
-
-  // Vilket håll drivern kan åka
-  public $leftTurn;
-  public $rightTurn;
-  public $straight;
-
-  public function __construct($newRoad) {
-    $this->newRoad = $newRoad;
-    $rhis->safeRoad = false;
-  }
-
-  public function newRoad() {
-    
-  }
-}
-
-
 class Driver {
 
-  // Förare
-  public $driverOne;
-  public $driverTwo;
-  public $driverThree;
+public $name;
+
+public function __construct($name) {
+  $this->name = $name;
+}
+
+public function createRoad($testRoad, $correctRoad, $road) {
+
+  while($correctRoad < count($road)) {
+    $random = mt_rand(0, count($testRoad) - 1);
+
+    $test = $testRoad[$random];
+
+    echo "<p>" . $test;
+
+    if($test == $road[$correctRoad]) {
+      $correctRoad++;
+      array_splice($testRoad, $random, 1);
+      echo " - Rätt väg!";
+    }
+  }
+}
 }
 
 ?>

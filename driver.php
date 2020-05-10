@@ -1,12 +1,7 @@
 <?php
 
 class Driver {
-
 public $name;
-
-public function __construct($name) {
-  $this->name = $name;
-}
 
 public function createRoad($testRoad, $correctRoad, $road) {
 
@@ -23,6 +18,10 @@ public function createRoad($testRoad, $correctRoad, $road) {
         echo " - Rätt väg!";
       }
     }
+  }
+
+  public function __construct($name) {
+  $this->name = $name;
   }
 }
 

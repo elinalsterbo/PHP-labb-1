@@ -23,7 +23,7 @@ use Driver;
 
 if (isset($_POST['findRoad'])) {
 
-$driver = new Driver("Elin");
+$driver = new Driver();
 
 $correctRoad = file('road.csv');
 $road = ["left", "left", "left", "left", "right", "right", "right", "right", "straight", "straight", "straight", "straight"];
@@ -64,7 +64,7 @@ $driver->createRoad($testRoad, $correctRoad, $road);
     <title>Labb1</title>
   </head>
   <body>
-    <form action="labb-1.php" method="post">
+    <form action="index.php" method="post">
       <input type="submit" name="findRoad" value="Find road">
     </form>  
   </body>

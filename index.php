@@ -18,15 +18,16 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include 'labb-1-class.php';
+include 'driver.php';
 use Driver;
 
 if (isset($_POST['findRoad'])) {
 
 $driver = new Driver("Elin");
+
+$correctRoad = file('road.csv');
 $road = ["left", "left", "left", "left", "right", "right", "right", "right", "straight", "straight", "straight", "straight"];
 $testRoad = $road;
-$correctRoad = 0;
 
 $driver->createRoad($testRoad, $correctRoad, $road);
 
